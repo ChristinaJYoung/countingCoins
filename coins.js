@@ -1,14 +1,3 @@
-/*
-  Input: 0.67
-  Output:
-  {
-    quarters: 2,
-    dimes: 1,
-    nickels: 1,
-    pennies: 2
-  }
-
-*/
 
 var quarters = .25;
 var dimes = .10;
@@ -61,20 +50,11 @@ function coinCounter () {
       Object.getOwnPropertyNames(coinPurse).forEach(function(val, idx, array) {
         console.log(val + ' -> ' + coinPurse[val]);
         display.innerHTML += '<div>' + val + ': ' + coinPurse[val] + '</div>';
-      // for(var key in coinPurse) {
-      //
-      //   var value = coinPurse[key];
-      //   display.innerHTML += '<div>' + value + '</div>';
-    })
+      });
     }
   });
-
-
-
-
 
   return coinPurse;
 }
 
 var coins = coinCounter()
-// console.log(coin s);
