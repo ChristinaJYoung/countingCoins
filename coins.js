@@ -32,6 +32,8 @@ function coinCounter () {
   var dollarAmt = document.getElementById('dollarAmount');
 
   document.getElementById('submitBtn').addEventListener('click', function () {
+    var display = document.getElementById('content');
+    display.innerHTML = "";
     console.log('TESTING', dollarAmt.value);
     if (dollarAmt.value !== "") {
       coinPurse.nickel1 += 1;
@@ -54,10 +56,17 @@ function coinCounter () {
         coinPurse.penny1++;
 
       }
+
       console.log('HELLO', coinPurse);
-
+      Object.getOwnPropertyNames(coinPurse).forEach(function(val, idx, array) {
+        console.log(val + ' -> ' + coinPurse[val]);
+        display.innerHTML += '<div>' + val + ': ' + coinPurse[val] + '</div>';
+      // for(var key in coinPurse) {
+      //
+      //   var value = coinPurse[key];
+      //   display.innerHTML += '<div>' + value + '</div>';
+    })
     }
-
   });
 
 
